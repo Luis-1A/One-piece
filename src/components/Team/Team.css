@@ -1,0 +1,22 @@
+.teamContainer {
+    text-align: center;
+    padding: 32px;
+}
+
+.teamContainer h3 {
+    font-size: 32px;
+    margin-bottom: 0;
+}
+
+.teamContainer span {
+    width: 32px;
+    border-bottom: 4px solid;
+    display: inline-block;    
+}
+
+.teamContainer .memberList {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    margin-top: 32px;
+}

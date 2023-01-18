@@ -1,0 +1,17 @@
+.footerContainer {
+    height: 213px;
+    background-color: #6278F7;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.footerContainer .socials img {
+    width: 32px;
+    margin-right: 32px;
+}
+
+.footerContainer p {
+    color: #FFF;
+    font-size: 20px;
+}
