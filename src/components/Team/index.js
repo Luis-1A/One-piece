@@ -12,6 +12,7 @@ const Team = ({ name, primaryColor, secondaryColor, members }) => {
                         key={member.name} 
                         name={member.name} 
                         role={member.role} 
+                        bounty={member.bounty} 
                         image={member.image} 
                         bg={primaryColor}
                     />
