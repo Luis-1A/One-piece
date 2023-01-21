@@ -3,7 +3,8 @@ import './Banner.css';
 function Banner() {
     return (
         <header className="banner" >
-            <img src="/images/banner.png" alt="Banner principal da página do Organo" />
+            <p>Pirate Crews Database</p>
+            <img src="/images/banner.png" alt="Marines flag top secret" />
         </header>
     )
 }
