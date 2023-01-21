@@ -1,9 +1,9 @@
 .button {
     color: #FFF;
-    background-color: #6278F7;
+    background-color: var(--primary-blue);
     border: none;
     border-radius: 10px;
-    font-size: 18px;
+    font-size:1.2em;
     font-weight: 700;
     margin-top: 32px;
     padding: 24px;
