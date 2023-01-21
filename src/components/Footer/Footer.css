@@ -1,15 +1,11 @@
 .footerContainer {
     font-family: var(--heading-font);
     height: 200px;
+    margin-top: 3em;
     background-color: var(--primary-blue);
     display: flex;
     justify-content: space-around;
     align-items: center;
-}
-
-.footerContainer .socials img {
-    width: 32px;
-    margin-right: 32px;
 }
 
 .footerContainer p {

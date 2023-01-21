@@ -5,7 +5,7 @@
 .memberContainer .header {
     border-radius: 10px 10px 0px 0px;
 }
-.memberContainer img {
+.memberContainer .picture {
     width: 100px;
     border-radius: 50%;
     position: relative;

@@ -1,7 +1,6 @@
 .form-container {
-    margin: 80px 0;
     overflow: hidden;
-    transition: max-height .3s ease;
+    transition: max-height .4s ease-in;
 }
 
 .form-container form {

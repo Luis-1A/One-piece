@@ -8,50 +8,58 @@ const Form = ({ teams, onRegisteredMember, active }) => {
     
     const [name, setName] = useState('');
     const [role, setRole] = useState('');
+    const [bounty, setBounty] = useState('');
     const [image, setImage] = useState('');
-    const [team, setTeam] = useState('');
+    const [crew, setCrew] = useState('');
 
     const onSave = (e) => {
         e.preventDefault();
-        onRegisteredMember({name, role, image, team});
+        onRegisteredMember({name, role, bounty, image, crew});
         setName('');
         setRole('');
+        setBounty('');
         setImage('');
-        setTeam('');
+        setCrew('');
     }
     
     return (
         <section className='form-container' style={{maxHeight: active ? '900px' : 0}}>
             <form onSubmit={onSave}>
-                <h2>Preencha os dados para criar o card do colaborador.</h2>
+                <h2>Pirate Information</h2>
                 <TextInput 
                     required={true} 
-                    label="Nome" 
-                    placeholder="Digite seu nome" 
+                    label="Name" 
+                    placeholder="Type the scallywag's name" 
                     text={name}
                     onChange={ value => setName(value)}  
                 />
                 <TextInput 
                     required={true} 
-                    label="Cargo" 
-                    placeholder="Digite seu cargo" 
+                    label="Role" 
+                    placeholder="Captain, navigator, sniper, medic, etc." 
                     text={role}
                     onChange={ value => setRole(value)}  
                 />
+                <TextInput  
+                    label="Bounty" 
+                    placeholder="Only numbers" 
+                    text={bounty}
+                    onChange={ value => setBounty(value)}  
+                />
                 <TextInput 
-                    label="Imagem" 
-                    placeholder="Informe o endereço da imagem" 
+                    label="Image" 
+                    placeholder="URL to a picture" 
                     text={image}
                     onChange={ value => setImage(value)}  
                 />
                 <Dropdown 
                     required={true} 
-                    label="Time" 
+                    label="Crew" 
                     itens={teams} 
-                    option={team} 
-                    onChange={ value => setTeam(value)}
+                    option={crew} 
+                    onChange={ value => setCrew(value)}
                 />
-                <Button>Criar card</Button>
+                <Button>Register</Button>
             </form>
         </section>
     );
