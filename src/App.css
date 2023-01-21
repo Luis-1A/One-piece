@@ -1,0 +1,18 @@
+.memorandum {
+    width: 80%;
+    font-family: var(--secondary-font);
+    border: 1px solid var(--primary-blue);
+    margin: 2em auto;
+    padding: .5em 1.5em;
+}
+
+.memorandum .signature {
+    text-align: right;
+    margin-top: 2em;
+}
+
+.registration-buttons {
+    display: flex;
+    justify-content: center;
+    column-gap: 3em;
+}
