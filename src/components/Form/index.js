@@ -4,7 +4,7 @@ import Dropdown from '../Dropdown';
 import TextInput from '../TextInput';
 import './Form.css';
 
-const Form = ({ teams, onRegisteredMember }) => {
+const Form = ({ teams, onRegisteredMember, active }) => {
     
     const [name, setName] = useState('');
     const [role, setRole] = useState('');
@@ -21,7 +21,7 @@ const Form = ({ teams, onRegisteredMember }) => {
     }
     
     return (
-        <section className='form-container'>
+        <section className='form-container' style={{maxHeight: active ? '900px' : 0}}>
             <form onSubmit={onSave}>
                 <h2>Preencha os dados para criar o card do colaborador.</h2>
                 <TextInput 

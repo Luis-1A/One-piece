@@ -1,10 +1,11 @@
 .form-container {
-    display: flex;
-    justify-content: center;
     margin: 80px 0;
+    overflow: hidden;
+    transition: max-height .3s ease;
 }
 
 .form-container form {
+    margin: auto;
     max-width: 80%;
     background-color: #F2F2F2;
     border-radius: 20px;
