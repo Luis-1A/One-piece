@@ -1,14 +1,14 @@
-import Member from '../Member';
-import './Team.css';
+import Pirate from '../Pirate';
+import './Crew.css';
 
-const Team = ({ name, primaryColor, secondaryColor, members }) => {
+const Crew = ({ name, primaryColor, secondaryColor, members }) => {
     return (
-        members.length > 0 && <section className='teamContainer' style={{ backgroundColor: secondaryColor }} >
+        members.length > 0 && <section className='crewContainer' style={{ backgroundColor: secondaryColor }} >
             <h3>{name}</h3>
             <span style={{ borderColor: primaryColor }} ></span>
             <div className="memberList">
                 {members.map(member => (
-                    <Member 
+                    <Pirate 
                         key={member.name} 
                         name={member.name} 
                         role={member.role} 
@@ -22,4 +22,4 @@ const Team = ({ name, primaryColor, secondaryColor, members }) => {
     );
 }
 
-export default Team;
+export default Crew;

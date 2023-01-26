@@ -1,20 +1,20 @@
-.teamContainer {
+.crewContainer {
     text-align: center;
     padding: 32px;
 }
 
-.teamContainer h3 {
+.crewContainer h3 {
     font-size: 32px;
     margin-bottom: 0;
 }
 
-.teamContainer span {
+.crewContainer span {
     width: 32px;
     border-bottom: 4px solid;
     display: inline-block;    
 }
 
-.teamContainer .memberList {
+.crewContainer .memberList {
     display: flex;
     flex-wrap: wrap;
     justify-content: space-around;

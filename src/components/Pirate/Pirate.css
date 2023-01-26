@@ -1,18 +1,18 @@
-.memberContainer {
+.pirateContainer {
     width: 280px;
 }
 
-.memberContainer .header {
+.pirateContainer .header {
     border-radius: 10px 10px 0px 0px;
 }
-.memberContainer .picture {
+.pirateContainer .picture {
     width: 100px;
     border-radius: 50%;
     position: relative;
     bottom: -50px;
 }
 
-.memberContainer .footer {
+.pirateContainer .footer {
     background: #FFFFFF;
     box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.08);
     border-radius: 0px 0px 10px 10px;
@@ -20,7 +20,7 @@
     padding-bottom: 40px;
 }
 
-.memberContainer .footer h4 {
+.pirateContainer .footer h4 {
     color: #6278F7;
     font-size: 18px;
     line-height: 22px;
@@ -28,7 +28,7 @@
     margin-bottom: 8px;
 }
 
-.memberContainer .footer h5 {
+.pirateContainer .footer h5 {
     font-size: 18px;
     line-height: 22px;
     color: #212121;

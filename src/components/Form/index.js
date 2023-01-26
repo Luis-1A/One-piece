@@ -4,7 +4,7 @@ import Dropdown from '../Dropdown';
 import TextInput from '../TextInput';
 import './Form.css';
 
-const Form = ({ teams, onRegisteredMember, active }) => {
+const Form = ({ crewList, onAddPirate, active }) => {
     
     const [name, setName] = useState('');
     const [role, setRole] = useState('');
@@ -14,7 +14,7 @@ const Form = ({ teams, onRegisteredMember, active }) => {
 
     const onSave = (e) => {
         e.preventDefault();
-        onRegisteredMember({name, role, bounty, image, crew});
+        onAddPirate({name, role, bounty, image, crew});
         setName('');
         setRole('');
         setBounty('');
@@ -31,33 +31,33 @@ const Form = ({ teams, onRegisteredMember, active }) => {
                     label="Name" 
                     placeholder="Type the scallywag's name" 
                     text={name}
-                    onChange={ value => setName(value)}  
+                    onChange={value => setName(value)}  
                 />
                 <TextInput 
                     required={true} 
                     label="Role" 
                     placeholder="Captain, navigator, sniper, medic, etc." 
                     text={role}
-                    onChange={ value => setRole(value)}  
+                    onChange={value => setRole(value)}  
                 />
                 <TextInput  
                     label="Bounty" 
                     placeholder="Only numbers" 
                     text={bounty}
-                    onChange={ value => setBounty(value)}  
+                    onChange={value => setBounty(value)}  
                 />
                 <TextInput 
                     label="Image" 
                     placeholder="URL to a picture" 
                     text={image}
-                    onChange={ value => setImage(value)}  
+                    onChange={value => setImage(value)}  
                 />
                 <Dropdown 
                     required={true} 
                     label="Crew" 
-                    itens={teams} 
+                    itens={crewList} 
                     option={crew} 
-                    onChange={ value => setCrew(value)}
+                    onChange={value => setCrew(value)}
                 />
                 <Button>Register</Button>
             </form>

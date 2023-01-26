@@ -4,51 +4,17 @@ import Banner from './components/Banner';
 import Button from './components/Button';
 import Footer from './components/Footer';
 import Form from './components/Form';
-import Team from './components/Team';
+import Crew from './components/Crew';
+import { crew, pirates } from './setup/initialData.js'
 
 function App() {
-
-  const teams = [
-    {
-      name:'Straw Hat Pirates', 
-      primaryColor: '#57C271', 
-      secondaryColor : '#D9F7E9' 
-    },
-    {  
-      name:'Booney Pirates', 
-      primaryColor: '#82CFFA', 
-      secondaryColor : '#E8F8FF' 
-    },
-    {  
-      name:'Drake Pirates', 
-      primaryColor: '#A6D157', 
-      secondaryColor : '#F0F8E2' 
-    },
-    {  
-      name:'Fire Tank Pirates', 
-      primaryColor: '#E06B69', 
-      secondaryColor : '#FDE7E8' 
-    },
-    {  
-      name:'Heart Pirates', 
-      primaryColor: '#DB6EBF', 
-      secondaryColor : '#FAE9F5' 
-    },
-    {  
-      name:'Kid Pirates', 
-      primaryColor: '#FFBA05', 
-      secondaryColor : '#FFF5D9' 
-    }
-  ];
-
-  const [members, setMembers] = useState([]);
+  const [piratesList, setPiratesList] = useState(pirates);
+  const [crewList, setCrewList] = useState(crew);
   const [showPirateForm, setShowPirateForm] = useState(false);
   const [showCrewForm, setShowCrewForm] = useState(false);
 
-  const onNewMemberAdded = (member) => {
-    // console.log(member);
-    // update the array with its original content, plus the new member's data at the end of the array
-    setMembers([...members, member]);
+  const addNewPirate = (pirate) => {
+    setPiratesList([...piratesList, pirate]);
   }
 
   // show/hide Registration forms
@@ -82,19 +48,19 @@ function App() {
       {/* {showPirateForm && <Form teams={teams.map(team => team.name)} onRegisteredMember={member => onNewMemberAdded(member)} />} */}
 
       <Form 
-        teams={teams.map(team => team.name)} 
-        onRegisteredMember={member => onNewMemberAdded(member)}
+        crewList={crewList.map(crew => crew.name)} 
+        onAddPirate={pirate => addNewPirate(pirate)}
         active={showPirateForm} 
       />
 
       <div className="crew-gallery">
-        {teams.map(team => (
-          <Team 
-            key={team.name} 
-            name={team.name} 
-            primaryColor={team.primaryColor} 
-            secondaryColor={team.secondaryColor} 
-            members={members.filter(member => member.crew === team.name)}
+        {crewList.map(crew => (
+          <Crew 
+            key={crew.name} 
+            name={crew.name} 
+            primaryColor={crew.primaryColor} 
+            secondaryColor={crew.secondaryColor} 
+            members={piratesList.filter(pirate => pirate.crew === crew.name)}
           />
         ))}
       </div>

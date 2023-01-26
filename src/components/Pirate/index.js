@@ -1,8 +1,8 @@
-import './Member.css';
+import './Pirate.css';
 
-const Member = ({ name, role, bounty, image, bg }) => {
+const Pirate = ({ name, role, bounty, image, bg }) => {
     return (
-        <div className='memberContainer'>
+        <div className='pirateContainer'>
             <div className='header' style={{ backgroundColor: bg }}>
                 <img className='picture' src={image} alt={name} />
             </div>
@@ -15,4 +15,4 @@ const Member = ({ name, role, bounty, image, bg }) => {
     );
 }
 
-export default Member;
+export default Pirate;
