@@ -8,6 +8,7 @@ import Crew from './components/Crew';
 import { crew, pirates } from './setup/initialData.js'
 
 function App() {
+  const [message, setMessage] = useState(''); // show a message when a form is submitted
   const [piratesList, setPiratesList] = useState(pirates);
   const [crewList, setCrewList] = useState(crew);
   const [showForm, setShowForm] = useState({
@@ -17,10 +18,25 @@ function App() {
 
   const addNewPirate = (pirate) => {
     setPiratesList([...piratesList, pirate]);
+    toggleForm('pirate');
+    showMessage('Pirate added to the database');
   }
 
   const addNewCrew = (crew) => {
     setCrewList([...crewList, crew]);
+    toggleForm('crew');
+    showMessage('Crew added to the database');
+  }
+
+  const showMessage = (message) => {
+    // scroll the screen to the buttons area
+    document.querySelector('.registration-buttons').scrollIntoView({behavior:'smooth'});
+    setTimeout(() => {
+      setMessage(message);
+    }, 500);
+    setTimeout(() => {
+      setMessage('');
+    }, 4500);
   }
 
   // show/hide Registration forms
@@ -56,6 +72,8 @@ function App() {
         <Button onClick={() => toggleForm('pirate')}>+ New Pirate</Button>
         <Button onClick={() => toggleForm('crew')}>+ New Pirate Crew</Button>
       </div>
+
+      {message && <p className="message">{message}</p>}
 
       <Form 
         type='pirate'

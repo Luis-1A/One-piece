@@ -18,6 +18,14 @@
     margin: 2em auto;
 }
 
+.message {
+    width: 80%;
+    padding: 1.3em;
+    margin: 2em auto;
+    background-color: var(--secondary-blue);
+    color: var(--primary-blue);
+}
+
 .crew-gallery {
     margin: 2em auto;
 }
