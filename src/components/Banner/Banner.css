@@ -8,10 +8,9 @@
 }
 
 .banner p {
-    font-size: 40px;
+    font-size: 44px;
     font-weight: 600;
     color: var(--primary-blue);
-    text-decoration: underline;
     align-self: flex-end;
     margin-bottom: 15px;
 }
