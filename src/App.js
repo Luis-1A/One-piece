@@ -10,20 +10,32 @@ import { crew, pirates } from './setup/initialData.js'
 function App() {
   const [piratesList, setPiratesList] = useState(pirates);
   const [crewList, setCrewList] = useState(crew);
-  const [showPirateForm, setShowPirateForm] = useState(false);
-  const [showCrewForm, setShowCrewForm] = useState(false);
+  const [showForm, setShowForm] = useState({
+    pirate: false,
+    crew: false
+  });
 
   const addNewPirate = (pirate) => {
     setPiratesList([...piratesList, pirate]);
   }
 
+  const addNewCrew = (crew) => {
+    setCrewList([...crewList, crew]);
+  }
+
   // show/hide Registration forms
   const toggleForm = (type) => {
     if (type === 'pirate') {
-      setShowPirateForm(!showPirateForm);
+      setShowForm({        
+        'pirate': !showForm['pirate'],
+        'crew': false
+      });
     }
     if (type === 'crew') {
-      setShowCrewForm(!showCrewForm);
+      setShowForm({
+        'crew': !showForm.crew,
+        'pirate': false
+      });
     }
   }
 
@@ -42,15 +54,20 @@ function App() {
 
       <div className="registration-buttons">
         <Button onClick={() => toggleForm('pirate')}>+ New Pirate</Button>
-        <Button>+ New Pirate Crew</Button>
+        <Button onClick={() => toggleForm('crew')}>+ New Pirate Crew</Button>
       </div>
 
-      {/* {showPirateForm && <Form teams={teams.map(team => team.name)} onRegisteredMember={member => onNewMemberAdded(member)} />} */}
+      <Form 
+        type='pirate'
+        crewList={crewList.map(crew => crew.name)} 
+        onAdd={pirate => addNewPirate(pirate)}
+        active={showForm.pirate}
+      />
 
       <Form 
-        crewList={crewList.map(crew => crew.name)} 
-        onAddPirate={pirate => addNewPirate(pirate)}
-        active={showPirateForm} 
+        type='crew'        
+        onAdd={crew => addNewCrew(crew)}
+        active={showForm.crew}
       />
 
       <div className="crew-gallery">
