@@ -77,8 +77,12 @@ function App() {
       </main>
 
       <div className="registration-buttons">
-        <Button onClick={() => toggleForm('pirate')}>+ New Pirate</Button>
-        <Button onClick={() => toggleForm('crew')}>+ New Pirate Crew</Button>
+        <Button onClick={() => toggleForm('pirate')}>
+          {showForm.pirate ? '-' : '+'} New Pirate
+        </Button>
+        <Button onClick={() => toggleForm('crew')}>
+          {showForm.crew ? '-' : '+'} New Pirate Crew
+        </Button>
       </div>
 
       {message && <p className="message">{message}</p>}
