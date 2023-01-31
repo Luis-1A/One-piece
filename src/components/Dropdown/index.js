@@ -7,7 +7,7 @@ const Dropdown = ({required, label, itens, option, onChange}) => {
             <label>{label}</label>
             <select required={required} value={option} onChange={(e) => onChange(e.target.value)}>
                 <option value="">Select a Crew</option>
-                {itens.map(item => <option key={item}>{item}</option>)}
+                {itens.map(item => <option key={item.id} value={item.id}>{item.name}</option>)}
             </select>
         </div>
     );

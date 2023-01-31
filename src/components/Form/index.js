@@ -25,7 +25,7 @@ const Form = ({ type, crewList=[], onAdd, onCancel, active }) => {
     const onSave = (e) => {
         e.preventDefault();
         if (type === 'pirate') {
-            onAdd({name, role, bounty, image, crew});
+            onAdd({name, role, bounty, image, crewId: crew});
         }
         if (type === 'crew') {
             onAdd({name, image, color})

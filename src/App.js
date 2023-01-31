@@ -19,7 +19,7 @@ function App() {
   const addNewPirate = (pirate) => {
     setPiratesList([...piratesList, pirate]);
     toggleForm('pirate');
-    showMessage('Pirate added to the database');
+    showMessage('Pirate added to the database'); 
   }
 
   const addNewCrew = (crew) => {
@@ -94,7 +94,7 @@ function App() {
 
       <Form 
         type='pirate'
-        crewList={crewList.map(crew => crew.name)} 
+        crewList={crewList} 
         onAdd={pirate => addNewPirate(pirate)}
         onCancel={toggleForm}
         active={showForm.pirate}
