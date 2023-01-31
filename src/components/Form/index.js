@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import { v4 as uuidv4 } from 'uuid';
 import Button from '../Button';
 import Dropdown from '../Dropdown';
 import InputField from '../InputField';
@@ -25,10 +26,10 @@ const Form = ({ type, crewList=[], onAdd, onCancel, active }) => {
     const onSave = (e) => {
         e.preventDefault();
         if (type === 'pirate') {
-            onAdd({name, role, bounty, image, crewId: crew});
+            onAdd({name, role, bounty, image, crewId: crew, id: uuidv4()});
         }
         if (type === 'crew') {
-            onAdd({name, image, color})
+            onAdd({name, image, color, id: uuidv4()})
         }
         clearInputFields();
     }

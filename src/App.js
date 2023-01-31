@@ -6,6 +6,7 @@ import Footer from './components/Footer';
 import Form from './components/Form';
 import Crew from './components/Crew';
 import { crew, pirates } from './setup/initialData.js'
+import { useEffect } from 'react';
 
 function App() {
   const [message, setMessage] = useState(''); // show a message when a form is submitted
@@ -15,6 +16,10 @@ function App() {
     pirate: false,
     crew: false
   });
+
+  // for debug purposes
+  // useEffect(() => {console.log(piratesList, crewList)}, 
+  // [piratesList, crewList])
 
   const addNewPirate = (pirate) => {
     setPiratesList([...piratesList, pirate]);
