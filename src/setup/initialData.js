@@ -1,33 +1,45 @@
 export const crew = [
     {
+      id: 0,
       name:'Straw Hat Pirates', 
       primaryColor: '#57C271', 
-      secondaryColor : '#D9F7E9' 
+      secondaryColor: '#D9F7E9',
+      image: 'https://static.wikia.nocookie.net/onepiece/images/b/bf/Straw_Hat_Pirates_Portrait.png'
     },
     {  
+      id: 1,
       name:'Booney Pirates', 
       primaryColor: '#82CFFA', 
-      secondaryColor : '#E8F8FF' 
+      secondaryColor: '#E8F8FF',
+      image: 'https://static.wikia.nocookie.net/onepiece/images/0/0f/Bonney_Pirates_Portrait.png'
     },
     {  
+      id: 2,
       name:'Drake Pirates', 
       primaryColor: '#A6D157', 
-      secondaryColor : '#F0F8E2' 
+      secondaryColor: '#F0F8E2',
+      image: 'https://static.wikia.nocookie.net/onepiece/images/e/ed/Drake_Pirates_Portrait.png'
     },
     {  
+      id: 3,
       name:'Fire Tank Pirates', 
       primaryColor: '#E06B69', 
-      secondaryColor : '#FDE7E8' 
+      secondaryColor: '#FDE7E8',
+      image: 'https://static.wikia.nocookie.net/onepiece/images/1/1d/Fire_Tank_Pirates_Portrait.png'
     },
     {  
+      id: 4,
       name:'Heart Pirates', 
       primaryColor: '#DB6EBF', 
-      secondaryColor : '#FAE9F5' 
+      secondaryColor: '#FAE9F5',
+      image: 'https://static.wikia.nocookie.net/onepiece/images/7/73/Heart_Pirates_Portrait.png'
     },
     {  
+      id: 5,
       name:'Kid Pirates', 
       primaryColor: '#FFBA05', 
-      secondaryColor : '#FFF5D9' 
+      secondaryColor: '#FFF5D9',
+      image: 'https://static.wikia.nocookie.net/onepiece/images/5/5b/Kid_Pirates_Portrait.png'
     }
 ];
 
@@ -37,49 +49,49 @@ export const pirates = [
         role: 'Captain',
         bounty: '3000000000',
         image: 'https://static.wikia.nocookie.net/onepiece/images/e/e6/Luffy_Wax.png',
-        crew: 'Straw Hat Pirates'
+        crewId: 0
     }, 
     {
         name: 'Nico Robin',
         role: 'Archaeologist',
         bounty: '930000000',
         image: 'https://static.wikia.nocookie.net/onepiece/images/9/90/Nico_Robin_Post_Timeskip_Portrait.png',
-        crew: 'Straw Hat Pirates'
+        crewId: 0
     }, 
     {
         name: 'Jewelry Bonney',
         role: 'Captain',
         bounty: '320000000',
         image: 'https://static.wikia.nocookie.net/onepiece/images/7/7c/Jewelry_Bonney%27s_Manga_Color_Scheme_Pre_Timeskip.png',
-        crew: 'Booney Pirates'
+        crewId: 1
     }, 
     {
         name: 'Diez Drake',
         role: 'Captain',
         bounty: '220000000',
         image: 'https://static.wikia.nocookie.net/onepiece/images/5/5c/X_Drake_Portrait.png/',
-        crew: 'Drake Pirates'
+        crewId: 2
     }, 
     {
         name: 'Capone Bege',
         role: 'Captain',
         bounty: '350000000',
         image: 'https://static.wikia.nocookie.net/onepiece/images/2/2a/Capone_Bege_Portrait.png/',
-        crew: 'Fire Tank Pirates'
+        crewId: 3
     }, 
     {
         name: 'Trafalgar Law',
         role: 'Captain',
         bounty: '3000000000',
         image: 'https://static.wikia.nocookie.net/onepiece/images/5/58/Law%27s_Finger_Tattoos.png',
-        crew: 'Heart Pirates'
+        crewId: 4
     }, 
     {
         name: 'Eustass Kid',
         role: 'Captain',
         bounty: '3000000000',
         image: 'https://static.wikia.nocookie.net/onepiece/images/a/ad/Eustass_Kid_Pre_Timeskip_Manga_Color_Scheme.png',
-        crew: 'Kid Pirates'
+        crewId: 5
     }, 
 
 ];

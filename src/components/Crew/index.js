@@ -1,12 +1,17 @@
 import Pirate from '../Pirate';
 import './Crew.css';
 
-const Crew = ({ name, primaryColor, secondaryColor, members }) => {
+const Crew = ({ crew, members }) => {
     return (
-        members.length > 0 && <section className='crewContainer' style={{ backgroundColor: secondaryColor }} >
-            <h3>{name}</h3>
-            <span style={{ borderColor: primaryColor }} ></span>
-            <div className="memberList">
+        members.length > 0 && <section className='crew-container' style={{ backgroundColor: crew.secondaryColor }} >
+            <div className="crew-header">
+                <div className="crew-name">
+                    <h3>{crew.name}</h3>
+                    <span style={{ borderColor: crew.primaryColor }} ></span>
+                </div>
+                <img src={crew.image} alt="Pirate Flag" className='crew-flag' />
+            </div>
+            <div className="crew-members">
                 {members.map(member => (
                     <Pirate 
                         key={member.name} 
@@ -14,7 +19,7 @@ const Crew = ({ name, primaryColor, secondaryColor, members }) => {
                         role={member.role} 
                         bounty={member.bounty} 
                         image={member.image} 
-                        bg={primaryColor}
+                        bg={crew.primaryColor}
                     />
                 ))}
             </div>

@@ -110,11 +110,9 @@ function App() {
       <div className="crew-gallery">
         {crewList.map(crew => (
           <Crew 
-            key={crew.name} 
-            name={crew.name} 
-            primaryColor={crew.primaryColor} 
-            secondaryColor={crew.secondaryColor} 
-            members={piratesList.filter(pirate => pirate.crew === crew.name)}
+            key={crew.id} 
+            crew={crew}
+            members={piratesList.filter(pirate => pirate.crewId === crew.id)}
           />
         ))}
       </div>

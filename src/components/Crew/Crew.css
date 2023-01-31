@@ -1,20 +1,31 @@
-.crewContainer {
+.crew-container {
     text-align: center;
     padding: 32px;
 }
 
-.crewContainer h3 {
+.crew-header {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    column-gap: 2em;
+}
+
+.crew-header h3 {
     font-size: 32px;
     margin-bottom: 0;
 }
 
-.crewContainer span {
+.crew-header span {
     width: 32px;
     border-bottom: 4px solid;
     display: inline-block;    
 }
 
-.crewContainer .memberList {
+.crew-flag {
+    width: 70px;
+}
+
+.crew-members {
     display: flex;
     flex-wrap: wrap;
     justify-content: space-around;
