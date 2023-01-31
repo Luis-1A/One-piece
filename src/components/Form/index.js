@@ -4,7 +4,7 @@ import Dropdown from '../Dropdown';
 import TextInput from '../TextInput';
 import './Form.css';
 
-const Form = ({ type, crewList=[], onAddPirate, active }) => {
+const Form = ({ type, crewList=[], onAdd, onCancel, active }) => {
     
     const [name, setName] = useState('');
     const [role, setRole] = useState('');
@@ -12,14 +12,29 @@ const Form = ({ type, crewList=[], onAddPirate, active }) => {
     const [image, setImage] = useState('');
     const [crew, setCrew] = useState('');
 
-    const onSave = (e) => {
-        e.preventDefault();
-        onAddPirate({name, role, bounty, image, crew});
+    const clearInputFields = () => {
         setName('');
         setRole('');
         setBounty('');
         setImage('');
         setCrew('');
+    }
+
+    const onSave = (e) => {
+        e.preventDefault();
+        if (type === 'pirate') {
+            onAdd({name, role, bounty, image, crew});
+        }
+        if (type === 'crew') {
+            onAdd({name, image, primaryColor: '#FFD2D2', secondaryColor: '#D2D2D2'})
+        }
+        clearInputFields();
+    }
+
+    const closeForm = (e, type) => {
+        e.preventDefault();
+        clearInputFields();
+        onCancel(type);
     }
     
     if (type === 'pirate') {
@@ -60,7 +75,10 @@ const Form = ({ type, crewList=[], onAddPirate, active }) => {
                         option={crew} 
                         onChange={value => setCrew(value)}
                     />
-                    <Button>Register</Button>
+                    <div className="buttons-container">
+                        <Button>Register</Button>
+                        <Button onClick={(e) => closeForm(e, type)}>Cancel</Button>
+                    </div>
                 </form>
             </section>
         );
@@ -84,7 +102,10 @@ const Form = ({ type, crewList=[], onAddPirate, active }) => {
                         text={image}
                         onChange={value => setImage(value)}  
                     />
-                    <Button>Register</Button>
+                    <div className="buttons-container">
+                        <Button>Register</Button>
+                        <Button onClick={(e) => closeForm(e, type)}>Cancel</Button>
+                    </div>
                 </form>
             </section>
         );

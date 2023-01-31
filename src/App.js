@@ -28,9 +28,13 @@ function App() {
     showMessage('Crew added to the database');
   }
 
-  const showMessage = (message) => {
-    // scroll the screen to the buttons area
+  // scroll the screen to the buttons area
+  const scrollScreen = () => {
     document.querySelector('.registration-buttons').scrollIntoView({behavior:'smooth'});
+  }
+
+  const showMessage = (message) => {
+    scrollScreen();
     setTimeout(() => {
       setMessage(message);
     }, 500);
@@ -53,6 +57,7 @@ function App() {
         'pirate': false
       });
     }
+    scrollScreen();
   }
 
   const showMemorandum = (e) => {
@@ -91,12 +96,14 @@ function App() {
         type='pirate'
         crewList={crewList.map(crew => crew.name)} 
         onAdd={pirate => addNewPirate(pirate)}
+        onCancel={toggleForm}
         active={showForm.pirate}
       />
 
       <Form 
         type='crew'        
         onAdd={crew => addNewCrew(crew)}
+        onCancel={toggleForm}
         active={showForm.crew}
       />
 
