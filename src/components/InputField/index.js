@@ -17,7 +17,6 @@ const InputField = ({type='text', required, label, placeholder, value, onChange}
                 placeholder={placeholder} 
                 required={required} 
                 onChange={onTyped}
-                className
             />
         </div>
     );
