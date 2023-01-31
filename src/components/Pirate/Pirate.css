@@ -2,15 +2,20 @@
     width: 200px;
     position: relative;   
     background: #FFFFFF;
-    box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.08); 
+    box-shadow: 5px 5px 15px 5px rgb(0 0 0 / 25%);
     border-radius: 10px;
+    transition: transform 0.3s;
+}
+
+.pirateContainer:hover {
+    transform: scale(1.1);
 }
 
 .pirateContainer .header {
     position: absolute;
-    border-radius: 10px 10px 80px 80px;
+    top: 45px;
     width: 100%;
-    height: 90px;
+    height: 70px;
     filter: opacity(60%) saturate(10);
 }
 .pirateContainer .picture {
@@ -27,7 +32,6 @@
 }
 
 .pirateContainer .footer h4 {
-    color: var(--primary-blue);
     font-size: 20px;
     font-weight: bold;
     margin: 1.2em 0 .6em;
@@ -35,7 +39,6 @@
 
 .pirateContainer .footer h5 {
     font-size: 16px;
-    color: #000;
     margin: .3em 0;
 }
 
