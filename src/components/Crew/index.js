@@ -11,7 +11,7 @@ const Crew = ({ crew, members }) => {
             <div className="crew-members">
                 {members.map(member => (
                     <Pirate 
-                        key={member.name} 
+                        key={member.id} 
                         name={member.name} 
                         role={member.role} 
                         bounty={member.bounty} 
