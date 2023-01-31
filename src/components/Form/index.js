@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import Button from '../Button';
 import Dropdown from '../Dropdown';
-import TextInput from '../TextInput';
+import InputField from '../InputField';
 import './Form.css';
 
 const Form = ({ type, crewList=[], onAdd, onCancel, active }) => {
@@ -11,6 +11,7 @@ const Form = ({ type, crewList=[], onAdd, onCancel, active }) => {
     const [bounty, setBounty] = useState('');
     const [image, setImage] = useState('');
     const [crew, setCrew] = useState('');
+    const [color, setColor] = useState('#000000');
 
     const clearInputFields = () => {
         setName('');
@@ -18,6 +19,7 @@ const Form = ({ type, crewList=[], onAdd, onCancel, active }) => {
         setBounty('');
         setImage('');
         setCrew('');
+        setColor('#000000');
     }
 
     const onSave = (e) => {
@@ -26,7 +28,7 @@ const Form = ({ type, crewList=[], onAdd, onCancel, active }) => {
             onAdd({name, role, bounty, image, crew});
         }
         if (type === 'crew') {
-            onAdd({name, image, primaryColor: '#FFD2D2', secondaryColor: '#D2D2D2'})
+            onAdd({name, image, color})
         }
         clearInputFields();
     }
@@ -37,35 +39,36 @@ const Form = ({ type, crewList=[], onAdd, onCancel, active }) => {
         onCancel(type);
     }
     
+    // TODO: eligible to become another component
     if (type === 'pirate') {
         return (
             <section className='form-container' style={{maxHeight: active ? '900px' : 0}}>
                 <form onSubmit={onSave}>
                     <h2>Pirate Information</h2>
-                    <TextInput 
+                    <InputField 
                         required={true} 
                         label="Name" 
                         placeholder="Type the scallywag's name" 
-                        text={name}
+                        value={name}
                         onChange={value => setName(value)}  
                     />
-                    <TextInput 
+                    <InputField 
                         required={true} 
                         label="Role" 
                         placeholder="Captain, navigator, sniper, medic, etc." 
-                        text={role}
+                        value={role}
                         onChange={value => setRole(value)}  
                     />
-                    <TextInput  
+                    <InputField  
                         label="Bounty" 
                         placeholder="Only numbers" 
-                        text={bounty}
+                        value={bounty}
                         onChange={value => setBounty(value)}  
                     />
-                    <TextInput 
+                    <InputField 
                         label="Image" 
                         placeholder="URL to a picture" 
-                        text={image}
+                        value={image}
                         onChange={value => setImage(value)}  
                     />
                     <Dropdown 
@@ -89,18 +92,24 @@ const Form = ({ type, crewList=[], onAdd, onCancel, active }) => {
             <section className='form-container' style={{maxHeight: active ? '900px' : 0}}>
                 <form onSubmit={onSave}>
                     <h2>Pirate Crew Information</h2>
-                    <TextInput 
+                    <InputField 
                         required={true} 
                         label="Name" 
                         placeholder="Type the crew's name" 
-                        text={name}
+                        value={name}
                         onChange={value => setName(value)}  
                     />
-                    <TextInput 
+                    <InputField 
                         label="Flag" 
                         placeholder="URL to a picture of the crew's flag" 
-                        text={image}
+                        value={image}
                         onChange={value => setImage(value)}  
+                    />
+                    <InputField 
+                        type="color"
+                        label="Color"
+                        value={color}
+                        onChange={value => setColor(value)}
                     />
                     <div className="buttons-container">
                         <Button>Register</Button>

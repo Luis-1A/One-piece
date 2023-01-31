@@ -11,17 +11,11 @@
 }
 
 .crew-header h3 {
-    font-size: 32px;
-    margin-bottom: 0;
+    font-size: 32px;    
+    margin: 0;
 }
 
-.crew-header span {
-    width: 32px;
-    border-bottom: 4px solid;
-    display: inline-block;    
-}
-
-.crew-flag {
+.crew-header img {
     width: 70px;
 }
 

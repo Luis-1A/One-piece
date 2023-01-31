@@ -2,43 +2,37 @@ export const crew = [
     {
       id: 0,
       name:'Straw Hat Pirates', 
-      primaryColor: '#57C271', 
-      secondaryColor: '#D9F7E9',
+      color: '#D9F7E9',
       image: 'https://static.wikia.nocookie.net/onepiece/images/b/bf/Straw_Hat_Pirates_Portrait.png'
     },
     {  
       id: 1,
       name:'Booney Pirates', 
-      primaryColor: '#82CFFA', 
-      secondaryColor: '#E8F8FF',
+      color: '#E8F8FF',
       image: 'https://static.wikia.nocookie.net/onepiece/images/0/0f/Bonney_Pirates_Portrait.png'
     },
     {  
       id: 2,
       name:'Drake Pirates', 
-      primaryColor: '#A6D157', 
-      secondaryColor: '#F0F8E2',
+      color: '#F0F8E2',
       image: 'https://static.wikia.nocookie.net/onepiece/images/e/ed/Drake_Pirates_Portrait.png'
     },
     {  
       id: 3,
       name:'Fire Tank Pirates', 
-      primaryColor: '#E06B69', 
-      secondaryColor: '#FDE7E8',
+      color: '#FDE7E8',
       image: 'https://static.wikia.nocookie.net/onepiece/images/1/1d/Fire_Tank_Pirates_Portrait.png'
     },
     {  
       id: 4,
       name:'Heart Pirates', 
-      primaryColor: '#DB6EBF', 
-      secondaryColor: '#FAE9F5',
+      color: '#FAE9F5',
       image: 'https://static.wikia.nocookie.net/onepiece/images/7/73/Heart_Pirates_Portrait.png'
     },
     {  
       id: 5,
       name:'Kid Pirates', 
-      primaryColor: '#FFBA05', 
-      secondaryColor: '#FFF5D9',
+      color: '#FFF5D9',
       image: 'https://static.wikia.nocookie.net/onepiece/images/5/5b/Kid_Pirates_Portrait.png'
     }
 ];
