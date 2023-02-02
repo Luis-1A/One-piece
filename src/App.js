@@ -56,7 +56,9 @@ function App() {
 
   // scroll the screen to the buttons area (form is hidden after submission)
   const scrollScreen = () => {
-    document.querySelector('.registration-buttons').scrollIntoView({ behavior: 'smooth' });
+    setTimeout(() => {
+      document.querySelector('.registration-buttons').scrollIntoView({ behavior: 'smooth' });      
+    }, 300);
   }
 
   // message to show after a pirate or crew is added
@@ -72,6 +74,7 @@ function App() {
 
   // show/hide Registration forms
   const toggleForm = (type) => {
+    scrollScreen();
     if (type === 'pirate') {
       setShowForm({
         'pirate': !showForm['pirate'],
@@ -84,7 +87,7 @@ function App() {
         'pirate': false
       });
     }
-    scrollScreen();
+    
   }
 
   return (
