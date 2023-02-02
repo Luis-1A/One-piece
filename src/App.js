@@ -1,6 +1,6 @@
 import './App.css';
-import { crew, pirates } from './setup/initialData.js'
-import { useState } from 'react';
+import { api } from './api/api.js'
+import { useState, useEffect } from 'react';
 import Banner from './components/Banner';
 import Button from './components/Button';
 import Footer from './components/Footer';
@@ -8,11 +8,11 @@ import Form from './components/Form';
 import Crew from './components/Crew';
 
 function App() {
-  const [piratesList, setPiratesList] = useState(pirates);
-  const [crewList, setCrewList] = useState(crew);
+  const [piratesList, setPiratesList] = useState([]);
+  const [crewList, setCrewList] = useState([]);
 
   // show a message when a form is submitted
-  const [message, setMessage] = useState(''); 
+  const [message, setMessage] = useState('');
 
   // decide which form to show 
   const [showForm, setShowForm] = useState({
@@ -20,29 +20,42 @@ function App() {
     crew: false
   });
 
-  // for debug purposes
-  // useEffect(() => {console.log(piratesList, crewList)}, 
-  // [piratesList, crewList])
+  useEffect(() => {
+    loadInitialData();
+  }, []);
+
+  const loadInitialData = () => {
+    setPiratesList(api.getPirates());
+    setCrewList(api.getCrew());
+  }
 
   const addNewPirate = (pirate) => {
-    setPiratesList([...piratesList, pirate]);
+    // using an updater function to update the state and update the api
+    setPiratesList(piratesList => {
+      const listUpdated = [...piratesList, pirate]
+      api.update('pirates', listUpdated);
+      return listUpdated;
+    })    
     toggleForm('pirate');
-    showMessage('Pirate added to the database'); 
+    showMessage('Pirate added to the database');
   }
 
   const addNewCrew = (crew) => {
-    setCrewList([...crewList, crew]);
+    // using the API's return to update the state
+    const updatedList = api.addCrew(crew);
+    setCrewList(updatedList);
     toggleForm('crew');
     showMessage('Crew added to the database');
   }
 
   const removePirate = (pirate) => {
-    setPiratesList(piratesList.filter(member => member.id !== pirate.id));
+    const updatedList = api.deletePirate(pirate);
+    setPiratesList(updatedList);
   }
 
   // scroll the screen to the buttons area (form is hidden after submission)
   const scrollScreen = () => {
-    document.querySelector('.registration-buttons').scrollIntoView({behavior:'smooth'});
+    document.querySelector('.registration-buttons').scrollIntoView({ behavior: 'smooth' });
   }
 
   // message to show after a pirate or crew is added
@@ -59,7 +72,7 @@ function App() {
   // show/hide Registration forms
   const toggleForm = (type) => {
     if (type === 'pirate') {
-      setShowForm({        
+      setShowForm({
         'pirate': !showForm['pirate'],
         'crew': false
       });
@@ -107,16 +120,16 @@ function App() {
 
       {message && <p className="message">{message}</p>}
 
-      <Form 
+      <Form
         type='pirate'
-        crewList={crewList} 
+        crewList={crewList}
         onAdd={pirate => addNewPirate(pirate)}
         onCancel={toggleForm}
         active={showForm.pirate}
       />
 
-      <Form 
-        type='crew'        
+      <Form
+        type='crew'
         onAdd={crew => addNewCrew(crew)}
         onCancel={toggleForm}
         active={showForm.crew}
@@ -124,8 +137,8 @@ function App() {
 
       <div className="crew-gallery">
         {crewList.map(crew => (
-          <Crew 
-            key={crew.id} 
+          <Crew
+            key={crew.id}
             crew={crew}
             members={piratesList.filter(pirate => pirate.crewId === crew.id)}
             onPirateRemove={pirate => removePirate(pirate)}
