@@ -1,7 +1,7 @@
 import Pirate from '../Pirate';
 import './Crew.css';
 
-const Crew = ({ crew, members }) => {
+const Crew = ({ crew, members, onPirateRemove }) => {
     return (
         members.length > 0 && <section className='crew-container' style={{ backgroundColor: crew.color }} >
             <div className="crew-header">
@@ -12,11 +12,9 @@ const Crew = ({ crew, members }) => {
                 {members.map(member => (
                     <Pirate 
                         key={member.id} 
-                        name={member.name} 
-                        role={member.role} 
-                        bounty={member.bounty} 
-                        image={member.image} 
-                        bg={crew.color}
+                        pirate={member}
+                        color={crew.color}
+                        onRemove={onPirateRemove}
                     />
                 ))}
             </div>

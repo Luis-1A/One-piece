@@ -23,6 +23,6 @@
     display: flex;
     flex-wrap: wrap;
     justify-content: space-around;
-    gap: 1em;
+    gap: 2em 1em;
     margin-top: 32px;
 }

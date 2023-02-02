@@ -1,17 +1,20 @@
-import { useState } from 'react';
 import './App.css';
+import { crew, pirates } from './setup/initialData.js'
+import { useState } from 'react';
 import Banner from './components/Banner';
 import Button from './components/Button';
 import Footer from './components/Footer';
 import Form from './components/Form';
 import Crew from './components/Crew';
-import { crew, pirates } from './setup/initialData.js'
-import { useEffect } from 'react';
 
 function App() {
-  const [message, setMessage] = useState(''); // show a message when a form is submitted
   const [piratesList, setPiratesList] = useState(pirates);
   const [crewList, setCrewList] = useState(crew);
+
+  // show a message when a form is submitted
+  const [message, setMessage] = useState(''); 
+
+  // decide which form to show 
   const [showForm, setShowForm] = useState({
     pirate: false,
     crew: false
@@ -33,11 +36,16 @@ function App() {
     showMessage('Crew added to the database');
   }
 
-  // scroll the screen to the buttons area
+  const removePirate = (pirate) => {
+    setPiratesList(piratesList.filter(member => member.id !== pirate.id));
+  }
+
+  // scroll the screen to the buttons area (form is hidden after submission)
   const scrollScreen = () => {
     document.querySelector('.registration-buttons').scrollIntoView({behavior:'smooth'});
   }
 
+  // message to show after a pirate or crew is added
   const showMessage = (message) => {
     scrollScreen();
     setTimeout(() => {
@@ -65,6 +73,7 @@ function App() {
     scrollScreen();
   }
 
+  // show full text (text is partially hidden on smaller screens)
   const showMemorandum = (e) => {
     document.querySelector('.memorandum').style.maxHeight = '100%';
     e.target.parentNode.style.display = 'none';
@@ -74,6 +83,7 @@ function App() {
     <div className="App">
       <Banner />
 
+      {/* eligible to become a component */}
       <main className='memorandum'>
         <h1>Important Message</h1>
         <p><strong>Attention all Officers and Infantry members stationed at the New World!</strong></p>
@@ -118,6 +128,7 @@ function App() {
             key={crew.id} 
             crew={crew}
             members={piratesList.filter(pirate => pirate.crewId === crew.id)}
+            onPirateRemove={pirate => removePirate(pirate)}
           />
         ))}
       </div>
