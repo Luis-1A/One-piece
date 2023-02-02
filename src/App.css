@@ -1,20 +1,3 @@
-.memorandum {
-    width: 80%;
-    font-family: var(--secondary-font);
-    border: 1px solid var(--primary-blue);
-    margin: 2em auto;
-    padding: .5em 1.5em;
-}
-
-.memorandum .signature {
-    text-align: right;
-    margin-top: 2em;
-}
-
-.read-memorandum {
-    display: none;
-}
-
 .registration-buttons {
     display: flex;
     justify-content: center;
@@ -32,36 +15,4 @@
 
 .crew-gallery {
     margin: 2em auto;
-}
-
-@media screen and (max-width: 425px) {
-    h1 {
-        font-size: 1.4em;
-    }
-
-    .memorandum {
-        max-height: 270px;
-        overflow: hidden;
-        position: relative;
-    }
-
-    .read-memorandum {
-        display: block;
-        position: absolute;
-        bottom: 0px;
-        right: 0;
-        background: #fff;
-        box-shadow: 0 0 60px 50px #fff;
-        padding: 1.2em 0 0.5em;
-        width: 100%;
-        text-align: center;
-    }
-
-    .read-memorandum button {
-        color: #FFF;
-        background-color: var(--primary-blue);
-        border: none;
-        border-radius: 5px;
-        padding: 0.5em 1.2em;
-    }
 }
