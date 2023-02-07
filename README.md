@@ -29,17 +29,17 @@ Este é um projeto desenvolvido em React para visualizar a tripulação dos "Pir
 
 ### Gif com visão geral da aplicação
 
-![Gif com visão geral da aplicação](https://user-images.githubusercontent.com/19349339/217262576-d8dcbadf-6aa3-42f7-b01e-3ec976cd20f6.gif)
+![Gif com visão geral da aplicação](https://user-images.githubusercontent.com/19349339/217274303-7f3c4048-3b12-4034-8ef5-586955690e6f.gif)
 
 Há também dois botões, que abrem formulários diferentes para se adicionar um novo pirata ou uma nova tripulação pirata. Adicionei uma animação para que os formulários apareçam ou sejam escondidos no evento de `onClick` dos botões. Os formulários possuem algumas validações nativas do navegador e, após a submissão, uma mensagem de sucesso é mostrada por alguns segundos. 
 
 ### Gif adicionando nova tripulação
 
-![Gif adicionando nova tripulação](https://user-images.githubusercontent.com/19349339/217262571-a3113894-b204-4f5d-a93c-c14379f3c2b8.gif)
+![Gif adicionando nova tripulação](https://user-images.githubusercontent.com/19349339/217274412-88e0311d-febe-4baf-a065-dd16fca8c800.gif)
 
 ### Gif adicionando novo pirata
 
-![Gif adicionando novo pirata](https://user-images.githubusercontent.com/19349339/217262568-131bc698-60a8-4c41-ae18-b58066b4d106.gif)
+![Gif adicionando novo pirata](https://user-images.githubusercontent.com/19349339/217274422-83c90aac-a04a-4fcc-ba87-55afe1264c2a.gif)
 
 A aplicação já vem com alguns dados iniciais para popular as tripulações. Estes dados se encontram no arquivo [initialData.js](https://github.com/zingarelli/one-piece-worst-gen-chart/blob/main/src/setup/initialData.js). Novos dados e suas atualizações são salvos localmente no navegador no "Local Storage". 
 
@@ -83,21 +83,21 @@ This is a project developed in React to view a chart with the "Worst Generation"
 
 ### Gif with an overviem of the app
 
-![Gif with an overviem of the app](https://user-images.githubusercontent.com/19349339/217262576-d8dcbadf-6aa3-42f7-b01e-3ec976cd20f6.gif)
+![Gif with an overviem of the app](https://user-images.githubusercontent.com/19349339/217274303-7f3c4048-3b12-4034-8ef5-586955690e6f.gif)
 
 There are also two buttons, which open different forms to add a new pirate or a new pirate crew. I've included some animation in order to show/hide the forms in the `onClick` event of the buttons. Inputs on each form have native browser validation and, after submitted, a success message is show for a few seconds.
 
 ### Gif adding a new crew
 
-![Gif adding a new crew](https://user-images.githubusercontent.com/19349339/217262571-a3113894-b204-4f5d-a93c-c14379f3c2b8.gif)
+![Gif adding a new crew](https://user-images.githubusercontent.com/19349339/217274412-88e0311d-febe-4baf-a065-dd16fca8c800.gif)
 
 ### Gif adding a new pirate
 
-![Gif adding a new pirate](https://user-images.githubusercontent.com/19349339/217262568-131bc698-60a8-4c41-ae18-b58066b4d106.gif)
+![Gif adding a new pirate](https://user-images.githubusercontent.com/19349339/217274422-83c90aac-a04a-4fcc-ba87-55afe1264c2a.gif)
 
 The app has an initial data to populate some crews. This data can be found in the [initialData.js](https://github.com/zingarelli/one-piece-worst-gen-chart/blob/main/src/setup/initialData.js) file. New data and updates are saved locally in the browser's Local Storage. 
 
-I created an [api.js](https://github.com/zingarelli/one-piece-worst-gen-chart/blob/main/src/api/api.js) file to simulate a back-end to the project. This file is responsible to import initial data and the CRUD tasks in the Local Storage. I've not included the option to edit data in this first version of the project.
+I created an [api.js](https://github.com/zingarelli/one-piece-worst-gen-chart/blob/main/src/api/api.js) file to simulate a back-end to the project. This file is responsible to import initial data and perform the CRUD tasks in the Local Storage. I've not included the option to edit data in this first version of the project.
 
 The app is responsive, having a layout for smaller screens (up to 425px width).
 
