@@ -1,4 +1,4 @@
-# One Piece | Worst Generation Pirates Chart ☠️
+# One Piece | Worst Generation Pirates Chart
 
 [Click here to read the English version of this Readme](#credits)
 
