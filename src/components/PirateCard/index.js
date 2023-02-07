@@ -1,10 +1,22 @@
 import './PirateCard.css';
 
 const PirateCard = ({ pirate, color, onRemove }) => {
+
+    // wait to show an animation before removing
+    const removePirate = (event, pirate) => {
+        hideCard(event.target.parentNode);
+        setTimeout(() => onRemove(pirate), 300);
+    }
+    
+    const hideCard = (card) => {
+        console.log(card);
+        card.classList.add('pirateDeleted');
+    }
+
     return (
         <div className='pirateContainer'>
             <button 
-                onClick={() => onRemove(pirate)} 
+                onClick={(event) => removePirate(event, pirate)} 
                 className='removeBtn' 
                 aria-label='Remove pirate' 
                 aria-hidden={true} 
