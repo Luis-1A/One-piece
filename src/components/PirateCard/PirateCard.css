@@ -1,5 +1,5 @@
 .pirateContainer {
-    width: 200px;
+    width: 185px;
     position: relative;   
     background: #FFFFFF;
     box-shadow: 5px 5px 15px 5px rgb(0 0 0 / 25%);
@@ -22,9 +22,9 @@
     cursor: pointer;
 }
 
-.pirateContainer .header {
+.pirateContainer .stripe {
     position: absolute;
-    top: 45px;
+    top: 35px;
     width: 100%;
     height: 70px;
     filter: opacity(60%) saturate(10);
@@ -34,25 +34,46 @@
     height: 115px;
     border-radius: 50%;
     position: relative;
-    top: 25px;
+    top: 15px;
 }
 
-.pirateContainer .footer {    
-    border-radius: 0px 0px 10px 10px;
-    padding: 0.5em 0;
+.pirateContainer .content {
+    margin: 0.5em auto;
 }
 
-.pirateContainer .footer h4 {
-    font-size: 20px;
+.pirateContainer .content .title {
+    font-size: 1.3em;
     font-weight: bold;
-    margin: 1.2em 0 .6em;
+    margin: 1.2em auto .6em;
 }
 
-.pirateContainer .footer h5 {
-    font-size: 16px;
-    margin: .3em 0;
+.pirateContainer .content p {
+    font-size: 1.1em;    
 }
 
-.pirateContainer .footer .captain {
+.pirateContainer .content .captain {
     color: #FF0000;
+}
+
+@media screen and (max-width: 425px) {
+    .pirateContainer {
+        width: 130px;
+    }
+
+    .pirateContainer .stripe {
+        height: 55px;
+    }
+
+    .pirateContainer .picture {
+        width: 95px;
+        height: 95px;
+    }
+
+    .pirateContainer .content .title {
+        font-size: 1em;
+    }
+    
+    .pirateContainer .content p {
+        font-size: 1em;    
+    }
 }

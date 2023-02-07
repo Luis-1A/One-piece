@@ -1,26 +1,27 @@
 .input-container {
-    margin: 2em 0;
+    margin: 1.3em 0;
 }
 
 .input-container label {
     display: block;
-    margin-bottom: 8px;
-    font-size: 18px;
+    margin-bottom: 0.5em;
     font-weight: 600;
 }
 
 .input-container input {
     background-color: #FFF;
     width: 100%;
-    font-size: 16px;
-    padding: 18px;
-    border: none;
-    box-shadow: 10px 10px 30px rgba(0, 0, 0, 0.06);
+    font-size: 1em;
+    padding: 0.6em 1em;
     box-sizing: border-box;
+    border: none;
+    border-radius: 8px;
+    box-shadow: 10px 10px 30px rgb(0 0 0 / 6%);
 }
 
 .input-color input {
-    width: 50px;
-    height: 50px;
+    width: 43px;
+    height: 43px;
     padding: 0.1em;
+    border-radius: 0;
 }

@@ -10,9 +10,9 @@
     column-gap: 2em;
 }
 
-.crew-header h3 {
-    font-size: 32px;    
+.crew-header h2 {    
     margin: 0;
+    font-weight: 600;
 }
 
 .crew-header img {

@@ -1,16 +1,17 @@
 .dropdown-container label {
     display: block;
-    margin-bottom: 8px;
-    font-size: 18px;
+    margin-bottom: .5em;
+    font-size: 1em;
     font-weight: 600;
 }
 
 .dropdown-container select {
     background-color: #FFF;
     width: 100%;
-    font-size: 16px;
-    padding: 18px;
-    border: none;
-    box-shadow: 10px 10px 30px rgba(0, 0, 0, 0.06);
+    font-size: 1em;
+    padding: 0.6em 1em;
     box-sizing: border-box;
+    border: none;
+    border-radius: 8px;
+    box-shadow: 10px 10px 30px rgb(0 0 0 / 6%);
 }

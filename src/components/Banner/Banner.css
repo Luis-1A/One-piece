@@ -1,14 +1,15 @@
 .banner {
     font-family: var(--heading-font);
     background-color: #e2e2e2;
-    height: 200px;
+    height: 180px;
     display: flex;
     justify-content: space-around;
     align-items: center;
+    padding: 0 1em;
 }
 
-.banner p {
-    font-size: 44px;
+.banner .header {
+    font-size: 2.5em;
     font-weight: 600;
     color: var(--primary-blue);
     align-self: flex-end;
@@ -17,4 +18,23 @@
 
 .banner img {
     max-height: 80%;
+}
+
+@media screen and (max-width: 425px) {
+    .banner {        
+        height: auto;
+        flex-wrap: wrap;
+        text-align: center;
+    }
+
+    .banner .header {
+        font-size: 1.7em;
+        order: 2;
+    }
+
+    .banner img {
+        max-height: 80px;
+        order: 1;
+        margin: .7em auto 1em;
+    }
 }

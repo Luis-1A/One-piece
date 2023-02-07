@@ -12,7 +12,7 @@ const Form = ({ type, crewList=[], onAdd, onCancel, active }) => {
     const [bounty, setBounty] = useState('');
     const [image, setImage] = useState('');
     const [crew, setCrew] = useState('');
-    const [color, setColor] = useState('#000000');
+    const [color, setColor] = useState('#1C7ABF');
 
     const clearInputFields = () => {
         setName('');
@@ -20,7 +20,7 @@ const Form = ({ type, crewList=[], onAdd, onCancel, active }) => {
         setBounty('');
         setImage('');
         setCrew('');
-        setColor('#000000');
+        setColor('#1C7ABF');
     }
 
     const onSave = (e) => {
@@ -61,6 +61,7 @@ const Form = ({ type, crewList=[], onAdd, onCancel, active }) => {
                         onChange={value => setRole(value)}  
                     />
                     <InputField  
+                        type="number"
                         label="Bounty" 
                         placeholder="Only numbers" 
                         value={bounty}

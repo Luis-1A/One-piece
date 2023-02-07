@@ -4,15 +4,24 @@
 }
 
 .form-container form {
-    margin: auto;
     max-width: 80%;
     background-color: #F2F2F2;
     border-radius: 20px;
-    padding: 36px 64px;
-    box-shadow: 8px 8px 16px rgba(0, 0, 0, 0.08);
+    margin: 1em auto;
+    padding: 2em 2.5em;
+    box-sizing: border-box;
 }
 
 .buttons-container {
     display: flex;
     column-gap: 2em;
+    margin-top: 1.3em;
+}
+
+@media screen and (max-width: 425px) {
+    .form-container form {
+        max-width: 90%;
+        padding: 1.5em;
+        border-radius: 10px;
+    }
 }
