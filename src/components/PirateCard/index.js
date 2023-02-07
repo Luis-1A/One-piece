@@ -9,7 +9,6 @@ const PirateCard = ({ pirate, color, onRemove }) => {
     }
     
     const hideCard = (card) => {
-        console.log(card);
         card.classList.add('pirateDeleted');
     }
 
