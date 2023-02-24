@@ -1,0 +1,30 @@
+.messageContainer {
+    position: fixed;
+    top: 0;
+    height: 100%;
+    width: 100%;
+    background-color: rgba(0, 0, 0, 0.3);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 10;
+}
+
+.message {
+    width: 70%;
+    height: 120px;
+    padding-top: 3em;
+    text-align: center;
+    background-color: var(--secondary-blue);
+    color: var(--primary-blue);
+    box-sizing: border-box;
+    position: relative;
+}
+
+.message span {
+    position: absolute;
+    top: 5px;
+    right: 10px;
+    font-size: 1.75em;
+    cursor: pointer;
+}

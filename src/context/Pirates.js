@@ -1,5 +1,6 @@
 import { createContext, useContext, useEffect, useState } from "react";
 import { api } from "../api/api";
+import { MessageContext } from "./Message";
 
 const PiratesContext = createContext();
 
@@ -15,6 +16,7 @@ export function PiratesProvider({ children }) {
 
 export function usePiratesContext() {
     const { piratesList, setPiratesList } = useContext(PiratesContext);
+    const { setMessage } = useContext(MessageContext);
     
     useEffect(() => {
         setPiratesList(api.getPirates());
@@ -27,7 +29,7 @@ export function usePiratesContext() {
             api.update('pirates', listUpdated);
             return listUpdated;
         })
-        // showMessage('Pirate added to the database');
+        setMessage('Pirate added to the database');
     }
 
     const removePirate = (pirate) => {

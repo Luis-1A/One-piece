@@ -1,40 +1,21 @@
-import { useState } from "react";
+import { useEffect } from "react";
 import CrewGallery from "../../components/CrewGallery";
 import Memorandum from "../../components/Memorandum";
+import Message from "../../components/Message";
 import RegisterButtons from "../../components/RegisterButtons";
 import './Home.css';
 
 export default function Home() {
-
-    // show a message when a form is submitted
-    const [message, setMessage] = useState('');
-    
-    // scroll the screen to the buttons area (form is hidden after submission)
-    const scrollScreen = () => {
-        setTimeout(() => {
-            document.querySelector('.registration-buttons').scrollIntoView({ behavior: 'smooth' });
-        }, 300);
-    }
-
-    // message to show after a pirate or crew is added
-    const showMessage = (message) => {
-        scrollScreen();
-        setTimeout(() => {
-            setMessage(message);
-        }, 500);
-        setTimeout(() => {
-            setMessage('');
-        }, 4500);
-    }    
+    // go to the top of the page whenever the page reloads
+    useEffect(()=> {
+        window.scrollTo(0, 0);
+    })    
 
     return (
         <>
             <Memorandum />
-
-            <RegisterButtons />
-
-            {message && <p className="message">{message}</p>}
-
+            <RegisterButtons  />
+            <Message />
             <CrewGallery />
         </>
     )

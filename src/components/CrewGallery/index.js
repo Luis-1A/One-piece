@@ -1,5 +1,6 @@
 import { useCrewsContext } from "../../context/Crews"
 import Crew from "../Crew";
+import './CrewGallery.css';
 
 export default function CrewGallery() {
     const { crewList } = useCrewsContext();

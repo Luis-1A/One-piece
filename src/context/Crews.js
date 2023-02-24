@@ -1,5 +1,6 @@
 import { createContext, useContext, useEffect, useState } from "react";
 import { api } from "../api/api";
+import { MessageContext } from "./Message";
 
 const CrewsContext = createContext();
 
@@ -15,6 +16,7 @@ export function CrewsProvider({ children }) {
 
 export function useCrewsContext() {
     const { crewList, setCrewList } = useContext(CrewsContext);
+    const { setMessage } = useContext(MessageContext);
 
     useEffect(() => {
         setCrewList(api.getCrew());
@@ -24,7 +26,7 @@ export function useCrewsContext() {
         // using the API's return to update the state
         const updatedList = api.addCrew(crew);
         setCrewList(updatedList);
-        // showMessage('Crew added to the database');
+        setMessage('Crew added to the database');
     }
 
     return {crewList, addCrew};
