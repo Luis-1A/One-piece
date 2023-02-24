@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 import { v4 as uuidv4 } from 'uuid';
 import Button from '../Button';
 import Dropdown from '../Dropdown';
@@ -13,6 +14,8 @@ const Form = ({ type, crewList=[], onAdd, onCancel, active }) => {
     const [image, setImage] = useState('');
     const [crew, setCrew] = useState('');
     const [color, setColor] = useState('#1C7ABF');
+
+    const navigate = useNavigate();
 
     const clearInputFields = () => {
         setName('');
@@ -37,7 +40,8 @@ const Form = ({ type, crewList=[], onAdd, onCancel, active }) => {
     const closeForm = (e, type) => {
         e.preventDefault();
         clearInputFields();
-        onCancel(type);
+        // onCancel(type);
+        navigate('/');
     }
     
     // TODO: eligible to become another component
