@@ -18,11 +18,3 @@
 .crew-header img {
     width: 70px;
 }
-
-.crew-members {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-around;
-    gap: 2em 1em;
-    margin-top: 32px;
-}

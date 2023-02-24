@@ -1,25 +1,7 @@
-.registration-buttons {
-    display: flex;
-    justify-content: center;
-    column-gap: 3em;
-    margin: 1.5em auto;
-}
-
 .message {
     width: 90%;
     padding: 1em;
     margin: 1em auto 0.5em;
     background-color: var(--secondary-blue);
     color: var(--primary-blue);
-}
-
-.crew-gallery {
-    margin: 1em auto;
-}
-
-@media screen and (max-width:425px) {
-    .registration-buttons {
-        margin: 0 1em;
-        gap: 1em;
-    }
 }

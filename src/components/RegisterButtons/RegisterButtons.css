@@ -1,0 +1,13 @@
+.registration-buttons {
+    display: flex;
+    justify-content: center;
+    column-gap: 3em;
+    margin: 1.5em auto;
+}
+
+@media screen and (max-width:425px) {
+    .registration-buttons {
+        margin: 0 1em;
+        gap: 1em;
+    }
+}

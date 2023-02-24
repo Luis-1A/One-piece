@@ -1,11 +1,13 @@
+import { usePiratesContext } from '../../context/Pirates';
 import './PirateCard.css';
 
-const PirateCard = ({ pirate, color, onRemove }) => {
+const PirateCard = ({ pirate, color }) => {
+    const { removePirate } = usePiratesContext()
 
     // wait to show an animation before removing
-    const removePirate = (event, pirate) => {
+    const onRemove = (event, pirate) => {
         hideCard(event.target.parentNode);
-        setTimeout(() => onRemove(pirate), 300);
+        setTimeout(() => removePirate(pirate), 300);
     }
     
     const hideCard = (card) => {
@@ -15,7 +17,7 @@ const PirateCard = ({ pirate, color, onRemove }) => {
     return (
         <div className='pirateContainer'>
             <button 
-                onClick={(event) => removePirate(event, pirate)} 
+                onClick={(event) => onRemove(event, pirate)} 
                 className='removeBtn' 
                 aria-label='Remove pirate' 
                 aria-hidden={true} 
