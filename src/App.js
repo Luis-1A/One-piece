@@ -6,7 +6,7 @@ import Button from './components/Button';
 import Footer from './components/Footer';
 import Form from './components/Form';
 import Crew from './components/Crew';
-import Memoradum from './components/Memorandum';
+import Memorandum from './components/Memorandum';
 
 function App() {
   const [piratesList, setPiratesList] = useState([]);
@@ -94,7 +94,7 @@ function App() {
     <div className="App">
       <Banner />
 
-      <Memoradum />
+      <Memorandum />
 
       <div className="registration-buttons">
         <Button onClick={() => toggleForm('pirate')}>

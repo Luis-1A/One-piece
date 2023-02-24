@@ -6,7 +6,7 @@ const showMemorandum = (e) => {
     e.target.parentNode.style.display = 'none';
 }
 
-export default function Memoradum() {
+export default function Memorandum() {
     return (
         <section className='memorandum'>
             <h2>Important Message</h2>
