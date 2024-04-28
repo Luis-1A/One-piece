@@ -1,22 +1,22 @@
 import './Memorandum.css'
 
-// show full text (text is partially hidden on smaller screens)
-const showMemorandum = (e) => {
+// Mostrar o texto completo (o texto é parcialmente oculto em telas menores)
+const mostrarMemorandum = (e) => {
     document.querySelector('.memorandum').style.maxHeight = '100%';
     e.target.parentNode.style.display = 'none';
 }
 
-export default function Memoradum() {
+export default function Memorandum() {
     return (
         <section className='memorandum'>
-            <h2>Important Message</h2>
-            <p><strong>Attention all Officers and Infantry members stationed at the New World!</strong></p>
-            <p>The so-called "Worst Generation" is sailing our waters and it's imperative that we capture them and their crew.</p>
-            <p>Below you'll find the organizational chart of known pirate crews. If you find any of these rascals, do not engage in battle and report immediately to your Captain. I repeat: <strong>do not engage in battle!</strong> These are extremely dangerous pirates with bounties of over <span className='noLineBreak'><img src='/images/belly.png' alt='belly currency' className='belly' />100,000,000</span>.</p>
-            <p>If necessary, use the correspondent buttons to register a new pirate or pirate crew.</p>
-            <p className='signature'>— Fleet Admiral Sakazuki</p>
+            <h2>Mensagem Importante</h2>
+            <p><strong>Atenção a todos os Oficiais e Membros da Infantaria estacionados no Novo Mundo!</strong></p>
+            <p>A chamada "Pior Geração" está navegando em nossas águas e é imperativo que os capturemos e suas tripulações.</p>
+            <p>Abaixo você encontrará o organograma de tripulações de piratas conhecidas. Se encontrar algum desses canalhas, não entre em batalha e informe imediatamente ao seu Capitão. Repito: <strong>não entre em batalha!</strong> Estes são piratas extremamente perigosos com recompensas de mais de <span className='noLineBreak'><img src='/images/belly.png' alt='moeda belly' className='belly' />100.000.000</span>.</p>
+            <p>Se necessário, utilize os botões correspondentes para registrar um novo pirata ou tripulação de piratas.</p>
+            <p className='signature'>— Almirante da Frota Sakazuki</p>
             <div className="read-memorandum">
-                <button onClick={showMemorandum}>Read More</button>
+                <button onClick={mostrarMemorandum}>Ler Mais</button>
             </div>
         </section>
     )
