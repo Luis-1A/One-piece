@@ -6,7 +6,7 @@ const Crew = ({ crew, members, onPirateRemove }) => {
         members.length > 0 && <section className='crew-container' style={{ backgroundColor: crew.color }} >
             <div className="crew-header">
                 <h2>{crew.name}</h2>
-                <img src={crew.image} alt="Pirate Flag" />
+                <img src={crew.image} alt="Bandeira dos Piratas" />
             </div>
             <div className="crew-members">
                 {members.map(member => (
