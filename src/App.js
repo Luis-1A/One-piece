@@ -12,10 +12,10 @@ function App() {
   const [piratesList, setPiratesList] = useState([]);
   const [crewList, setCrewList] = useState([]);
 
-  // show a message when a form is submitted
+  // mostra uma mensagem quando um formulário é enviado
   const [message, setMessage] = useState('');
 
-  // decide which form to show 
+  // decide qual formulário mostrar 
   const [showForm, setShowForm] = useState({
     pirate: false,
     crew: false
@@ -31,22 +31,22 @@ function App() {
   }
 
   const addNewPirate = (pirate) => {
-    // using an updater function to update the state and update the api
+    // usando uma função de atualização para atualizar o estado e atualizar a API
     setPiratesList(piratesList => {
       const listUpdated = [...piratesList, pirate]
       api.update('pirates', listUpdated);
       return listUpdated;
     })    
     toggleForm('pirate');
-    showMessage('Pirate added to the database');
+    showMessage('Pirata adicionado ao banco de dados');
   }
 
   const addNewCrew = (crew) => {
-    // using the API's return to update the state
+    // usando o retorno da API para atualizar o estado
     const updatedList = api.addCrew(crew);
     setCrewList(updatedList);
     toggleForm('crew');
-    showMessage('Crew added to the database');
+    showMessage('Tripulação adicionada ao banco de dados');
   }
 
   const removePirate = (pirate) => {
@@ -54,14 +54,14 @@ function App() {
     setPiratesList(updatedList);
   }
 
-  // scroll the screen to the buttons area (form is hidden after submission)
+  // rola a tela para a área dos botões (o formulário é ocultado após o envio)
   const scrollScreen = () => {
     setTimeout(() => {
       document.querySelector('.registration-buttons').scrollIntoView({ behavior: 'smooth' });      
     }, 300);
   }
 
-  // message to show after a pirate or crew is added
+  // mensagem a ser exibida após a adição de um pirata ou tripulação
   const showMessage = (message) => {
     scrollScreen();
     setTimeout(() => {
@@ -72,7 +72,7 @@ function App() {
     }, 4500);
   }
 
-  // show/hide Registration forms
+  // mostra/oculta formulários de registro
   const toggleForm = (type) => {
     scrollScreen();
     if (type === 'pirate') {
@@ -87,7 +87,6 @@ function App() {
         'pirate': false
       });
     }
-    
   }
 
   return (
@@ -98,10 +97,10 @@ function App() {
 
       <div className="registration-buttons">
         <Button onClick={() => toggleForm('pirate')}>
-          {showForm.pirate ? '-' : '+'} New Pirate
+          {showForm.pirate ? '-' : '+'} Novo Pirata
         </Button>
         <Button onClick={() => toggleForm('crew')}>
-          {showForm.crew ? '-' : '+'} New Pirate Crew
+          {showForm.crew ? '-' : '+'} Nova Tripulação de Piratas
         </Button>
       </div>
 
