@@ -2,24 +2,24 @@ import './PirateCard.css';
 
 const PirateCard = ({ pirate, color, onRemove }) => {
 
-    // wait to show an animation before removing
-    const removePirate = (event, pirate) => {
-        hideCard(event.target.parentNode);
-        setTimeout(() => onRemove(pirate), 300);
+    // Aguardar para mostrar uma animação antes de remover
+    const removerPirata = (evento, pirata) => {
+        esconderCartão(evento.target.parentNode);
+        setTimeout(() => onRemove(pirata), 300);
     }
     
-    const hideCard = (card) => {
-        card.classList.add('pirateDeleted');
+    const esconderCartão = (cartao) => {
+        cartao.classList.add('pirateDeleted');
     }
 
     return (
         <div className='pirateContainer'>
             <button 
-                onClick={(event) => removePirate(event, pirate)} 
+                onClick={(evento) => removerPirata(evento, pirate)} 
                 className='removeBtn' 
-                aria-label='Remove pirate' 
+                aria-label='Remover pirata' 
                 aria-hidden={true} 
-                title='Remove pirate'
+                title='Remover pirata'
             >
                 ❌
             </button>
@@ -28,7 +28,7 @@ const PirateCard = ({ pirate, color, onRemove }) => {
             <div className='content'>
                 <h3 className='title'>{pirate.name}</h3>
                 <p className={pirate.role.toLowerCase() === 'captain' ? 'captain' : ''}>{pirate.role}</p>
-                <p><img className='belly' src="/images/belly.png" alt="belly currency icon" />{parseInt(pirate.bounty, 10).toLocaleString('en-US')}</p>
+                <p><img className='belly' src="/images/belly.png" alt="ícone de moeda belly" />{parseInt(pirate.bounty, 10).toLocaleString('en-US')}</p>
             </div>
         </div>
     );
