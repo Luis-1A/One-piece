@@ -3,8 +3,8 @@ import './Banner.css';
 function Banner() {
     return (
         <header className='banner' >
-            <h1 className='header'>PIRATES DATABASE</h1>
-            <img src='/images/banner.png' alt='Marines flag top secret' />
+            <h1 className='header'>BANCO DE DADOS DE PIRATAS</h1>
+            <img src='/images/banner.png' alt='Bandeira dos Marines - Segredo máximo' />
         </header>
     )
 }
