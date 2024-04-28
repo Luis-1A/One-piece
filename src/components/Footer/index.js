@@ -3,7 +3,7 @@ import './Footer.css';
 const Footer = () => {
     return (
         <footer className="footerContainer">            
-            <p>Marines - World Government's Military Sea Force</p>
+            <p>Marinha - Força Marítima Militar do Governo Mundial</p>
         </footer>
     );
 }
