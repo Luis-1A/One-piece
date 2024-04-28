@@ -40,49 +40,48 @@ const Form = ({ type, crewList=[], onAdd, onCancel, active }) => {
         onCancel(type);
     }
     
-    // TODO: eligible to become another component
     if (type === 'pirate') {
         return (
             <section className='form-container' style={{maxHeight: active ? '900px' : 0}}>
                 <form onSubmit={onSave}>
-                    <h2>Pirate Information</h2>
+                    <h2>Informações do Pirata</h2>
                     <InputField 
                         required={true} 
-                        label="Name" 
-                        placeholder="Type the scallywag's name" 
+                        label="Nome" 
+                        placeholder="Digite o nome do pirata" 
                         value={name}
                         onChange={value => setName(value)}  
                     />
                     <InputField 
                         required={true} 
-                        label="Role" 
-                        placeholder="Captain, navigator, sniper, medic, etc." 
+                        label="Função" 
+                        placeholder="Capitão, navegador, atirador, médico, etc." 
                         value={role}
                         onChange={value => setRole(value)}  
                     />
                     <InputField  
                         type="number"
-                        label="Bounty" 
-                        placeholder="Only numbers" 
+                        label="Recompensa" 
+                        placeholder="Apenas números" 
                         value={bounty}
                         onChange={value => setBounty(value)}  
                     />
                     <InputField 
-                        label="Image" 
-                        placeholder="URL to a picture" 
+                        label="Imagem" 
+                        placeholder="URL para uma imagem" 
                         value={image}
                         onChange={value => setImage(value)}  
                     />
                     <Dropdown 
                         required={true} 
-                        label="Crew" 
-                        itens={crewList} 
+                        label="Tripulação" 
+                        items={crewList} 
                         option={crew} 
                         onChange={value => setCrew(value)}
                     />
                     <div className="buttons-container">
-                        <Button>Register</Button>
-                        <Button onClick={(e) => closeForm(e, type)}>Cancel</Button>
+                        <Button>Registrar</Button>
+                        <Button onClick={(e) => closeForm(e, type)}>Cancelar</Button>
                     </div>
                 </form>
             </section>
@@ -93,29 +92,29 @@ const Form = ({ type, crewList=[], onAdd, onCancel, active }) => {
         return (
             <section className='form-container' style={{maxHeight: active ? '900px' : 0}}>
                 <form onSubmit={onSave}>
-                    <h2>Pirate Crew Information</h2>
+                    <h2>Informações da Tripulação de Piratas</h2>
                     <InputField 
                         required={true} 
-                        label="Name" 
-                        placeholder="Type the crew's name" 
+                        label="Nome" 
+                        placeholder="Digite o nome da tripulação" 
                         value={name}
                         onChange={value => setName(value)}  
                     />
                     <InputField 
-                        label="Flag" 
-                        placeholder="URL to a picture of the crew's flag" 
+                        label="Bandeira" 
+                        placeholder="URL para uma imagem da bandeira da tripulação" 
                         value={image}
                         onChange={value => setImage(value)}  
                     />
                     <InputField 
                         type="color"
-                        label="Color"
+                        label="Cor"
                         value={color}
                         onChange={value => setColor(value)}
                     />
                     <div className="buttons-container">
-                        <Button>Register</Button>
-                        <Button onClick={(e) => closeForm(e, type)}>Cancel</Button>
+                        <Button>Registrar</Button>
+                        <Button onClick={(e) => closeForm(e, type)}>Cancelar</Button>
                     </div>
                 </form>
             </section>
